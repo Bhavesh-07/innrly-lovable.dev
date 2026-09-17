@@ -18,7 +18,8 @@ if env_file.exists():
             line_s = line.strip()
             if line_s and not line_s.startswith("#") and "=" in line_s:
                 k, v = line_s.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip())
+                os.environ[k.strip()] = v.strip()
+
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
@@ -146,15 +147,16 @@ def require_permission(module_name: str):
         raise HTTPException(status_code=403, detail=f"Permission denied for module: {module_name}")
     return dependency
 
-from db_config import DB_CONFIG
+import db_config
 
 def get_db_connection():
     try:
-        connection = mysql.connector.connect(**DB_CONFIG)
+        connection = mysql.connector.connect(**db_config.DB_CONFIG)
         return connection
     except Error as e:
-        print(f"Error connecting to MySQL: {e}")
-        raise HTTPException(status_code=500, detail="Database connection error")
+        print(f"Error connecting to MySQL with config {db_config.DB_CONFIG}: {e}")
+        raise HTTPException(status_code=500, detail=f"Database connection error: {e}")
+
 
 # Rate limiting storage (in-memory)
 LEAD_RATE_LIMITS = defaultdict(list)  # client_ip -> list of timestamps
