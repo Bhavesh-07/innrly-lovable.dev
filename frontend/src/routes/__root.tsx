@@ -143,6 +143,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       );
     }
 
+    // Google reCAPTCHA v3
+    dynamicScripts.push({
+      src: "https://www.google.com/recaptcha/api.js?render=6LcVJrkkAAAAABsSLGi1FDOjAtIyby9UNsBQPUCd&ver=3.0",
+      async: true,
+    });
+
     // Structured Data Organization & WebSite Schemas
     dynamicScripts.push(
       {

@@ -32,9 +32,38 @@ export type LeadPayload = Record<string, unknown> & {
   source: "contact" | "onboarding" | "trial";
 };
 
+const RECAPTCHA_SITE_KEY = "6LcVJrkkAAAAABsSLGi1FDOjAtIyby9UNsBQPUCd";
+
+export async function getRecaptchaToken(action: string = "lead_submit"): Promise<string | null> {
+  if (typeof window === "undefined") return null;
+  const grecaptcha = (window as unknown as { grecaptcha?: { ready: (cb: () => void) => void; execute: (key: string, opts: { action: string }) => Promise<string> } }).grecaptcha;
+  if (!grecaptcha || typeof grecaptcha.execute !== "function") return null;
+
+  return new Promise((resolve) => {
+    try {
+      grecaptcha.ready(() => {
+        grecaptcha
+          .execute(RECAPTCHA_SITE_KEY, { action })
+          .then((token) => resolve(token))
+          .catch(() => resolve(null));
+      });
+    } catch {
+      resolve(null);
+    }
+  });
+}
+
 export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; error?: string }> {
   const url = import.meta.env.VITE_LEAD_WEBHOOK_URL as string | undefined;
   const isNewsletter = (payload as { kind?: string }).kind === "newsletter";
+
+  // Fetch reCAPTCHA v3 token if available
+  let recaptchaToken: string | null = null;
+  try {
+    recaptchaToken = await getRecaptchaToken(payload.source || (isNewsletter ? "newsletter" : "lead_submit"));
+  } catch {
+    // Fail-open for reCAPTCHA client errors to prevent blocking genuine user submissions
+  }
 
   if (!url) {
     if (import.meta.env.DEV) {
@@ -58,7 +87,11 @@ export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; e
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...payload, submittedAt: new Date().toISOString() }),
+      body: JSON.stringify({
+        ...payload,
+        recaptcha_token: recaptchaToken,
+        submittedAt: new Date().toISOString()
+      }),
     });
     if (!res.ok) {
       track(isNewsletter ? "newsletter_signup" : "form_submit", {

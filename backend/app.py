@@ -744,7 +744,8 @@ class LeadPayload(BaseModel):
     kind: Optional[str] = None
     submittedAt: Optional[str] = None
     
-    # Honeypot fields for anti-spam
+    # Anti-spam & reCAPTCHA fields
+    recaptcha_token: Optional[str] = None
     bot_field: Optional[str] = None
     honeypot: Optional[str] = None
     website_url: Optional[str] = None
