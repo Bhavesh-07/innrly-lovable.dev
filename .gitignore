@@ -3,8 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Environment files
+# Environment and Config files
 .env.local
+db_config.py
+backend/db_config.py
 
 # Node
 node_modules/
