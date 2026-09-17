@@ -1,0 +1,41 @@
+import { jsx, jsxs, Fragment } from "react/jsx-runtime";
+import { i as faqs } from "./router-CCF17sca.js";
+import { I as IntegrationLayout } from "./IntegrationLayout-Bw8C8hXP.js";
+import "@tanstack/react-query";
+import "@tanstack/react-router";
+import "react";
+import "lucide-react";
+import "@radix-ui/react-slot";
+import "class-variance-authority";
+import "clsx";
+import "tailwind-merge";
+import "zod";
+import "@radix-ui/react-label";
+import "sonner";
+import "./Section-CUtP8UOj.js";
+function Page() {
+  return /* @__PURE__ */ jsx(IntegrationLayout, { partnerName: "Oracle Opera", eyebrow: "Integration · Opera", badge: "PMS · Cloud + v5", title: /* @__PURE__ */ jsxs(Fragment, { children: [
+    "Innrly + Opera: ",
+    /* @__PURE__ */ jsx("span", { className: "text-gradient", children: "automate everything" }),
+    " downstream of the PMS."
+  ] }), intro: "Innrly reads your Opera night-audit pack, folios, and manager reports — then runs the reconciliation, A/P, and labor workflows that turn raw PMS output into a closed set of books.", direction: "push-only", directionLabel: "Read from Opera · push to accounting", whatItDoes: [{
+    heading: "Read Opera nightly",
+    body: "Innrly pulls the night-audit pack and supporting reports automatically — no overnight Excel exports."
+  }, {
+    heading: "Reconcile and audit",
+    body: "Three-way match across Opera folios, bank deposits, and OTA statements. Variances are surfaced before sunrise."
+  }, {
+    heading: "Push to your GL",
+    body: "Approved, GL-coded entries flow into M3, QuickBooks, or Sage Intacct — keeping Opera and your accounting system in lockstep."
+  }], flow: {
+    from: "Opera (Cloud or v5)",
+    via: "Innrly · audit, reconcile, code",
+    to: "M3 · QuickBooks · Sage Intacct"
+  }, inScope: ["Night audit automation across Opera-managed properties", "Three-way reconciliation (PMS · bank · OTA)", "Invoice capture, GL coding, and Bill Pay", "BI dashboards and labor management"], staysIn: {
+    system: "Opera",
+    items: ["Reservations and the active room ledger", "Front-desk operations and check-in / check-out", "Folio management and rate plans"]
+  }, faqs });
+}
+export {
+  Page as component
+};

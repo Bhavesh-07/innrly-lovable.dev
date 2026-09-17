@@ -1,0 +1,158 @@
+[2026-09-09 08:35:04,720] [INFO] [AUTH] Sending staff login request to https://ob.innrly.com/api/auth/login (Email: jdoe@innrly.com)...
+[2026-09-09 08:35:05,380] [INFO] [AUTH] Login successful! HTTP 200 (658.0ms). Authenticated as jdoe@innrly.com (Role: dev).
+[2026-09-09 08:35:05,381] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=clients
+[2026-09-09 08:35:05,843] [INFO] [GET_TABLE] HTTP 200 (462.0ms) -> Retrieved 11 records from table 'clients'.
+[2026-09-09 08:35:05,844] [INFO] Writing Client 'summit-peak-hospitality' (Summit Peak Hospitality) to portal...
+[2026-09-09 08:35:05,845] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'clients' | Op: 'insert' | ID: 'summit-peak-hospitality'
+[2026-09-09 08:35:06,300] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (454.0ms) for table 'clients' (ID: 'summit-peak-hospitality'). Response: {"ok": true}
+[2026-09-09 08:35:06,302] [INFO] Writing Hotel 'summit-peak-hospitality-summit-view-lodge' (Summit View Lodge) for client 'summit-peak-hospitality'...
+[2026-09-09 08:35:06,303] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'summit-peak-hospitality-summit-view-lodge'
+[2026-09-09 08:35:06,765] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (461.0ms) for table 'hotels' (ID: 'summit-peak-hospitality-summit-view-lodge'). Response: {"ok": true}
+[2026-09-09 08:35:06,767] [INFO] Writing Hotel 'summit-peak-hospitality-grand-horizon-suites' (Grand Horizon Suites) for client 'summit-peak-hospitality'...
+[2026-09-09 08:35:06,768] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'summit-peak-hospitality-grand-horizon-suites'
+[2026-09-09 08:35:07,232] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (463.0ms) for table 'hotels' (ID: 'summit-peak-hospitality-grand-horizon-suites'). Response: {"ok": true}
+[2026-09-09 08:35:07,234] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 08:35:07,692] [INFO] [GET_TABLE] HTTP 200 (457.0ms) -> Retrieved 18 records from table 'users'.
+[2026-09-09 08:35:07,834] [INFO] Creating new Portal User 'user-sanjay-summit' for 'sanjay.summit@confidosoft.com'...
+[2026-09-09 08:35:07,835] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-sanjay-summit'
+[2026-09-09 08:35:08,306] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (470.0ms) for table 'users' (ID: 'user-sanjay-summit'). Response: {"ok": true}
+[2026-09-09 08:35:08,307] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 08:35:08,756] [INFO] [GET_TABLE] HTTP 200 (449.0ms) -> Retrieved 19 records from table 'users'.
+[2026-09-09 08:35:08,899] [INFO] Creating new Portal User 'user-kavita-shah' for 'kavita.shah@confidosoft.com'...
+[2026-09-09 08:35:08,900] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-kavita-shah'
+[2026-09-09 08:35:09,359] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (458.0ms) for table 'users' (ID: 'user-kavita-shah'). Response: {"ok": true}
+[2026-09-09 08:47:16,214] [INFO] [AUTH] Sending staff login request to https://ob.innrly.com/api/auth/login (Email: jdoe@innrly.com)...
+[2026-09-09 08:47:16,890] [INFO] [AUTH] Login successful! HTTP 200 (675.0ms). Authenticated as jdoe@innrly.com (Role: dev).
+[2026-09-09 08:47:16,892] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=clients
+[2026-09-09 08:47:17,346] [INFO] [GET_TABLE] HTTP 200 (453.0ms) -> Retrieved 12 records from table 'clients'.
+[2026-09-09 08:47:17,347] [INFO] Writing Client 'atman-hospitality' (Atman Hospitality) to portal...
+[2026-09-09 08:47:17,348] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'clients' | Op: 'insert' | ID: 'atman-hospitality'
+[2026-09-09 08:47:17,812] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (463.0ms) for table 'clients' (ID: 'atman-hospitality'). Response: {"ok": true}
+[2026-09-09 08:47:17,814] [INFO] Writing Hotel 'atman-hospitality-atman-inn' (Atman Inn) for client 'atman-hospitality'...
+[2026-09-09 08:47:17,815] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'atman-hospitality-atman-inn'
+[2026-09-09 08:47:18,287] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (470.0ms) for table 'hotels' (ID: 'atman-hospitality-atman-inn'). Response: {"ok": true}
+[2026-09-09 08:47:18,289] [INFO] Writing Hotel 'atman-hospitality-hospitality-inn' (Hospitality Inn) for client 'atman-hospitality'...
+[2026-09-09 08:47:18,290] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'atman-hospitality-hospitality-inn'
+[2026-09-09 08:47:18,746] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (455.0ms) for table 'hotels' (ID: 'atman-hospitality-hospitality-inn'). Response: {"ok": true}
+[2026-09-09 08:47:18,748] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 08:47:19,200] [INFO] [GET_TABLE] HTTP 200 (451.0ms) -> Retrieved 20 records from table 'users'.
+[2026-09-09 08:47:19,341] [INFO] Creating new Portal User 'user-rishig' for 'rishig@confidosoft.in'...
+[2026-09-09 08:47:19,342] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-rishig'
+[2026-09-09 08:47:19,796] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (453.0ms) for table 'users' (ID: 'user-rishig'). Response: {"ok": true}
+[2026-09-09 08:47:19,797] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 08:47:20,247] [INFO] [GET_TABLE] HTTP 200 (450.0ms) -> Retrieved 21 records from table 'users'.
+[2026-09-09 08:47:20,387] [INFO] Creating new Portal User 'user-nikhil-patel' for 'nikhil.patel@confidosoft.com'...
+[2026-09-09 08:47:20,389] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-nikhil-patel'
+[2026-09-09 08:47:20,841] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (451.0ms) for table 'users' (ID: 'user-nikhil-patel'). Response: {"ok": true}
+[2026-09-09 08:47:20,843] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 08:47:21,421] [INFO] [GET_TABLE] HTTP 200 (578.0ms) -> Retrieved 22 records from table 'users'.
+[2026-09-09 08:47:21,561] [INFO] Creating new Portal User 'user-bhavikjoshi' for 'bhavikjoshi@confidosoft.com'...
+[2026-09-09 08:47:21,562] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-bhavikjoshi'
+[2026-09-09 08:47:22,031] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (468.0ms) for table 'users' (ID: 'user-bhavikjoshi'). Response: {"ok": true}
+[2026-09-09 09:22:54,573] [INFO] [AUTH] Sending staff login request to https://ob.innrly.com/api/auth/login (Email: jdoe@innrly.com)...
+[2026-09-09 09:22:55,202] [INFO] [AUTH] Login successful! HTTP 200 (627.0ms). Authenticated as jdoe@innrly.com (Role: dev).
+[2026-09-09 09:22:55,204] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=clients
+[2026-09-09 09:22:55,670] [INFO] [GET_TABLE] HTTP 200 (465.0ms) -> Retrieved 13 records from table 'clients'.
+[2026-09-09 09:22:55,671] [INFO] Writing Client 'summit-peak-hospitality' (Summit Peak Hospitality) to portal...
+[2026-09-09 09:22:55,672] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'clients' | Op: 'insert' | ID: 'summit-peak-hospitality'
+[2026-09-09 09:22:56,131] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (458.0ms) for table 'clients' (ID: 'summit-peak-hospitality'). Response: {"ok": true}
+[2026-09-09 09:22:56,133] [INFO] Writing Hotel 'summit-peak-hospitality-summit-peak-lodge' (Summit Peak Lodge) for client 'summit-peak-hospitality'...
+[2026-09-09 09:22:56,134] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'summit-peak-hospitality-summit-peak-lodge'
+[2026-09-09 09:22:56,593] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (459.0ms) for table 'hotels' (ID: 'summit-peak-hospitality-summit-peak-lodge'). Response: {"ok": true}
+[2026-09-09 09:22:56,594] [INFO] Writing Hotel 'summit-peak-hospitality-summit-vista-resort' (Summit Vista Resort) for client 'summit-peak-hospitality'...
+[2026-09-09 09:22:56,595] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'summit-peak-hospitality-summit-vista-resort'
+[2026-09-09 09:22:57,052] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (456.0ms) for table 'hotels' (ID: 'summit-peak-hospitality-summit-vista-resort'). Response: {"ok": true}
+[2026-09-09 09:22:57,053] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 09:22:57,646] [INFO] [GET_TABLE] HTTP 200 (592.0ms) -> Retrieved 23 records from table 'users'.
+[2026-09-09 09:22:57,647] [INFO] User email 'sanjay.summit@confidosoft.com' already exists on portal. Performing safe non-destructive update...
+[2026-09-09 09:22:57,648] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'update' | ID: 'user-sanjay-summit'
+[2026-09-09 09:22:58,112] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (463.0ms) for table 'users' (ID: 'user-sanjay-summit'). Response: {"ok": true}
+[2026-09-09 09:22:58,113] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 09:22:58,691] [INFO] [GET_TABLE] HTTP 200 (578.0ms) -> Retrieved 23 records from table 'users'.
+[2026-09-09 09:22:58,693] [INFO] User email 'kavita.shah@confidosoft.com' already exists on portal. Performing safe non-destructive update...
+[2026-09-09 09:22:58,694] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'update' | ID: 'user-kavita-shah'
+[2026-09-09 09:22:59,153] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (458.0ms) for table 'users' (ID: 'user-kavita-shah'). Response: {"ok": true}
+[2026-09-09 10:28:40,501] [INFO] [AUTH] Sending staff login request to https://ob.innrly.com/api/auth/login (Email: jdoe@innrly.com)...
+[2026-09-09 10:28:41,151] [INFO] [AUTH] Login successful! HTTP 200 (648.0ms). Authenticated as jdoe@innrly.com (Role: dev).
+[2026-09-09 10:28:41,153] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=clients
+[2026-09-09 10:28:41,608] [INFO] [GET_TABLE] HTTP 200 (454.0ms) -> Retrieved 13 records from table 'clients'.
+[2026-09-09 10:28:41,610] [INFO] Writing Client 'atman-hospitality' (Atman Hospitality) to portal...
+[2026-09-09 10:28:41,610] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'clients' | Op: 'insert' | ID: 'atman-hospitality'
+[2026-09-09 10:28:42,075] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (464.0ms) for table 'clients' (ID: 'atman-hospitality'). Response: {"ok": true}
+[2026-09-09 10:28:42,077] [INFO] Writing Hotel 'atman-hospitality-atman-llc' (Atman LLC) for client 'atman-hospitality'...
+[2026-09-09 10:28:42,078] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'atman-hospitality-atman-llc'
+[2026-09-09 10:28:42,543] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (464.0ms) for table 'hotels' (ID: 'atman-hospitality-atman-llc'). Response: {"ok": true}
+[2026-09-09 10:28:42,544] [INFO] Writing Hotel 'atman-hospitality-atman-unity' (Atman Unity) for client 'atman-hospitality'...
+[2026-09-09 10:28:42,545] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'atman-hospitality-atman-unity'
+[2026-09-09 10:28:43,012] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (466.0ms) for table 'hotels' (ID: 'atman-hospitality-atman-unity'). Response: {"ok": true}
+[2026-09-09 10:28:43,014] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 10:28:43,595] [INFO] [GET_TABLE] HTTP 200 (580.0ms) -> Retrieved 23 records from table 'users'.
+[2026-09-09 10:28:43,596] [INFO] User email 'rishig@confidosoft.in' already exists on portal. Performing safe non-destructive update...
+[2026-09-09 10:28:43,597] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'update' | ID: 'user-rishig'
+[2026-09-09 10:28:44,055] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (458.0ms) for table 'users' (ID: 'user-rishig'). Response: {"ok": true}
+[2026-09-09 10:28:44,056] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 10:28:44,645] [INFO] [GET_TABLE] HTTP 200 (589.0ms) -> Retrieved 23 records from table 'users'.
+[2026-09-09 10:28:44,785] [INFO] Creating new Portal User 'user-tejassingh' for 'tejassingh@confidosoft.com'...
+[2026-09-09 10:28:44,787] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-tejassingh'
+[2026-09-09 10:28:45,268] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (478.0ms) for table 'users' (ID: 'user-tejassingh'). Response: {"ok": true}
+[2026-09-09 10:28:45,269] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 10:28:45,854] [INFO] [GET_TABLE] HTTP 200 (585.0ms) -> Retrieved 24 records from table 'users'.
+[2026-09-09 10:28:45,993] [INFO] Creating new Portal User 'user-manjee' for 'manjee@gmail.com'...
+[2026-09-09 10:28:45,995] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-manjee'
+[2026-09-09 10:28:46,457] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (461.0ms) for table 'users' (ID: 'user-manjee'). Response: {"ok": true}
+[2026-09-09 10:54:15,540] [INFO] [AUTH] Sending staff login request to https://ob.innrly.com/api/auth/login (Email: jdoe@innrly.com)...
+[2026-09-09 10:54:16,591] [INFO] [AUTH] Login successful! HTTP 200 (1049.0ms). Authenticated as jdoe@innrly.com (Role: dev).
+[2026-09-09 10:54:16,593] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=clients
+[2026-09-09 10:54:17,079] [INFO] [GET_TABLE] HTTP 200 (486.0ms) -> Retrieved 13 records from table 'clients'.
+[2026-09-09 10:54:17,088] [INFO] Writing Client 'confidosoft-premier-hospitality' (Confidosoft Premier Hospitality) to portal...
+[2026-09-09 10:54:17,088] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'clients' | Op: 'insert' | ID: 'confidosoft-premier-hospitality'
+[2026-09-09 10:54:17,574] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (485.0ms) for table 'clients' (ID: 'confidosoft-premier-hospitality'). Response: {"ok": true}
+[2026-09-09 10:54:17,582] [INFO] Writing Hotel 'confidosoft-premier-hospitality-wyndham-garden-san-jose-airport' (Wyndham Garden San Jose Airport) for client 'confidosoft-premier-hospitality'...
+[2026-09-09 10:54:17,585] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'confidosoft-premier-hospitality-wyndham-garden-san-jose-airport'
+[2026-09-09 10:54:18,062] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (476.0ms) for table 'hotels' (ID: 'confidosoft-premier-hospitality-wyndham-garden-san-jose-airport'). Response: {"ok": true}
+[2026-09-09 10:54:18,064] [INFO] Writing Hotel 'confidosoft-premier-hospitality-hampton-inn-suites-san-jose' (Hampton Inn & Suites San Jose) for client 'confidosoft-premier-hospitality'...
+[2026-09-09 10:54:18,065] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'confidosoft-premier-hospitality-hampton-inn-suites-san-jose'
+[2026-09-09 10:54:18,653] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (587.0ms) for table 'hotels' (ID: 'confidosoft-premier-hospitality-hampton-inn-suites-san-jose'). Response: {"ok": true}
+[2026-09-09 10:54:18,655] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 10:54:19,242] [INFO] [GET_TABLE] HTTP 200 (587.0ms) -> Retrieved 25 records from table 'users'.
+[2026-09-09 10:54:19,392] [INFO] Creating new Portal User 'user-sanjay-rathod' for 'sanjay.rathod@confidosoft.com'...
+[2026-09-09 10:54:19,397] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-sanjay-rathod'
+[2026-09-09 10:54:19,872] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (470.0ms) for table 'users' (ID: 'user-sanjay-rathod'). Response: {"ok": true}
+[2026-09-09 10:54:19,874] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 10:54:20,463] [INFO] [GET_TABLE] HTTP 200 (588.0ms) -> Retrieved 26 records from table 'users'.
+[2026-09-09 10:54:20,603] [INFO] Creating new Portal User 'user-nirav-patel' for 'nirav.patel@confidosoft.com'...
+[2026-09-09 10:54:20,605] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-nirav-patel'
+[2026-09-09 10:54:21,073] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (460.0ms) for table 'users' (ID: 'user-nirav-patel'). Response: {"ok": true}
+[2026-09-09 10:54:21,075] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 10:54:21,663] [INFO] [GET_TABLE] HTTP 200 (588.0ms) -> Retrieved 27 records from table 'users'.
+[2026-09-09 10:54:21,805] [INFO] Creating new Portal User 'user-kishan-patel' for 'kishan.patel@confidosoft.com'...
+[2026-09-09 10:54:21,815] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-kishan-patel'
+[2026-09-09 10:54:22,297] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (481.0ms) for table 'users' (ID: 'user-kishan-patel'). Response: {"ok": true}
+[2026-09-09 11:39:26,090] [INFO] [AUTH] Sending staff login request to https://ob.innrly.com/api/auth/login (Email: jdoe@innrly.com)...
+[2026-09-09 11:39:26,782] [INFO] [AUTH] Login successful! HTTP 200 (690.0ms). Authenticated as jdoe@innrly.com (Role: dev).
+[2026-09-09 11:39:26,783] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=clients
+[2026-09-09 11:39:27,248] [INFO] [GET_TABLE] HTTP 200 (465.0ms) -> Retrieved 14 records from table 'clients'.
+[2026-09-09 11:39:27,250] [INFO] Writing Client 'aston-avenue-hotels' (Aston Avenue Hotels) to portal...
+[2026-09-09 11:39:27,251] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'clients' | Op: 'insert' | ID: 'aston-avenue-hotels'
+[2026-09-09 11:39:27,711] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (460.0ms) for table 'clients' (ID: 'aston-avenue-hotels'). Response: {"ok": true}
+[2026-09-09 11:39:27,713] [INFO] Writing Hotel 'aston-avenue-hotels-aston-atria' (Aston Atria) for client 'aston-avenue-hotels'...
+[2026-09-09 11:39:27,714] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'aston-avenue-hotels-aston-atria'
+[2026-09-09 11:39:28,170] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (455.0ms) for table 'hotels' (ID: 'aston-avenue-hotels-aston-atria'). Response: {"ok": true}
+[2026-09-09 11:39:28,172] [INFO] Writing Hotel 'aston-avenue-hotels-aston-heights' (Aston Heights) for client 'aston-avenue-hotels'...
+[2026-09-09 11:39:28,175] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'aston-avenue-hotels-aston-heights'
+[2026-09-09 11:39:28,646] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (471.0ms) for table 'hotels' (ID: 'aston-avenue-hotels-aston-heights'). Response: {"ok": true}
+[2026-09-09 11:39:28,648] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 11:39:29,247] [INFO] [GET_TABLE] HTTP 200 (598.0ms) -> Retrieved 28 records from table 'users'.
+[2026-09-09 11:39:29,252] [INFO] User email 'rishig@confidosoft.in' already exists on portal. Performing safe non-destructive update...
+[2026-09-09 11:39:29,253] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'update' | ID: 'user-rishig'
+[2026-09-09 11:39:29,716] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (462.0ms) for table 'users' (ID: 'user-rishig'). Response: {"ok": true}
+[2026-09-09 11:39:29,717] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 11:39:30,314] [INFO] [GET_TABLE] HTTP 200 (596.0ms) -> Retrieved 28 records from table 'users'.
+[2026-09-09 11:39:30,315] [INFO] User email 'tejassingh@confidosoft.com' already exists on portal. Performing safe non-destructive update...
+[2026-09-09 11:39:30,316] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'update' | ID: 'user-tejassingh'
+[2026-09-09 11:39:30,781] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (463.0ms) for table 'users' (ID: 'user-tejassingh'). Response: {"ok": true}
+[2026-09-09 11:39:30,782] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-09 11:39:31,382] [INFO] [GET_TABLE] HTTP 200 (599.0ms) -> Retrieved 28 records from table 'users'.
+[2026-09-09 11:39:31,520] [INFO] Creating new Portal User 'user-manjee' for 'manjee@confidosoft.com'...
+[2026-09-09 11:39:31,523] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-manjee'
+[2026-09-09 11:39:31,998] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (474.0ms) for table 'users' (ID: 'user-manjee'). Response: {"ok": true}

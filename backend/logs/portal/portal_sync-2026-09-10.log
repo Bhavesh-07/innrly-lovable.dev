@@ -1,0 +1,20 @@
+[2026-09-10 12:00:39,315] [INFO] [AUTH] Sending staff login request to https://ob.innrly.com/api/auth/login (Email: jdoe@innrly.com)...
+[2026-09-10 12:00:39,984] [INFO] [AUTH] Login successful! HTTP 200 (668.0ms). Authenticated as jdoe@innrly.com (Role: dev).
+[2026-09-10 12:00:39,986] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=clients
+[2026-09-10 12:00:40,462] [INFO] [GET_TABLE] HTTP 200 (475.0ms) -> Retrieved 15 records from table 'clients'.
+[2026-09-10 12:00:40,466] [INFO] Writing Client 'acm-hospitality' (ACM Hospitality) to portal...
+[2026-09-10 12:00:40,469] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'clients' | Op: 'insert' | ID: 'acm-hospitality'
+[2026-09-10 12:00:40,933] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (463.0ms) for table 'clients' (ID: 'acm-hospitality'). Response: {"ok": true}
+[2026-09-10 12:00:40,934] [INFO] Writing Hotel 'acm-hospitality-florence-pride' (Florence Pride) for client 'acm-hospitality'...
+[2026-09-10 12:00:40,935] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'hotels' | Op: 'insert' | ID: 'acm-hospitality-florence-pride'
+[2026-09-10 12:00:41,415] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (479.0ms) for table 'hotels' (ID: 'acm-hospitality-florence-pride'). Response: {"ok": true}
+[2026-09-10 12:00:41,451] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-10 12:00:42,040] [INFO] [GET_TABLE] HTTP 200 (589.0ms) -> Retrieved 28 records from table 'users'.
+[2026-09-10 12:00:42,189] [INFO] Creating new Portal User 'user-sanjayconfido' for 'sanjayconfido@gmail.com'...
+[2026-09-10 12:00:42,202] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-sanjayconfido'
+[2026-09-10 12:00:42,661] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (458.0ms) for table 'users' (ID: 'user-sanjayconfido'). Response: {"ok": true}
+[2026-09-10 12:00:42,663] [INFO] [GET_TABLE] GET https://ob.innrly.com/api/portal/data?table=users
+[2026-09-10 12:00:43,249] [INFO] [GET_TABLE] HTTP 200 (586.0ms) -> Retrieved 29 records from table 'users'.
+[2026-09-10 12:00:43,391] [INFO] Creating new Portal User 'user-ratnesh-dubey' for 'ratnesh.dubey@confidosoft.in'...
+[2026-09-10 12:00:43,392] [INFO] [WRITE_ROW] POST https://ob.innrly.com/api/portal/data | Table: 'users' | Op: 'insert' | ID: 'user-ratnesh-dubey'
+[2026-09-10 12:00:43,853] [INFO] [WRITE_ROW] SUCCESS HTTP 200 (460.0ms) for table 'users' (ID: 'user-ratnesh-dubey'). Response: {"ok": true}
