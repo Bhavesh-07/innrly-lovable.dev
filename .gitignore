@@ -10,6 +10,10 @@ __pycache__/
 node_modules/
 dist/
 build/
+client/
+server/
+.tanstack/
+*.zip
 
 # OS generated files
 .DS_Store

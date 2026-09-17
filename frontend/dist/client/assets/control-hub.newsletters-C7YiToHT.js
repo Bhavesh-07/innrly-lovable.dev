@@ -1,1 +1,0 @@
-import{i as e}from"./utils-Cqy9P3ao.js";import{x as t}from"./index-IPsNY9UL.js";var n=e();function r(){return(0,n.jsx)(t,{activeTab:`newsletters`})}export{r as component};

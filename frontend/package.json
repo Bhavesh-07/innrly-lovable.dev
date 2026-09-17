@@ -3,6 +3,11 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vite build",
+    "start": "node run-server.mjs"
+  },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
     "@dnd-kit/core": "^6.3.1",

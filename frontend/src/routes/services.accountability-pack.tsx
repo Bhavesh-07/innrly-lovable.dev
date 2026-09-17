@@ -1,0 +1,204 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { breadcrumbLd, defaultSeoData, fetchSeoData, getMetaTags } from "@/lib/seo";
+import {
+  Check,
+  ArrowRight,
+  ClipboardCheck,
+  FileSpreadsheet,
+  Leaf,
+  Building2,
+  PenLine,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Section, SectionHeading, CtaBand } from "@/components/site/Section";
+
+export const Route = createFileRoute("/services/accountability-pack")({
+  component: Page,
+  loader: async () => {
+    const seo = await fetchSeoData("/services/accountability-pack");
+    return { seo };
+  },
+  head: ({ loaderData }) => ({
+    meta: [
+      ...getMetaTags(
+        loaderData?.seo || null,
+        defaultSeoData["/services/accountability-pack"],
+        "/services/accountability-pack"
+      ),
+    ],
+    links: [{ rel: "canonical", href: "https://www.innrly.com/services/accountability-pack" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Innrly Accountability Pack",
+          serviceType: "Hotel back-office data verification and reporting",
+          provider: { "@type": "Organization", name: "Innrly" },
+          areaServed: "US",
+          offers: {
+            "@type": "Offer",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              priceCurrency: "USD",
+              description: "Per-property pricing — contact sales",
+            },
+          },
+        }),
+      },
+      breadcrumbLd([
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Accountability Pack", url: "/services/accountability-pack" },
+      ]),
+    ],
+  }),
+});
+
+const services = [
+  {
+    icon: ClipboardCheck,
+    title: "Data verification",
+    body: "Daily checks that PMS, accounting, payroll, and banking feeds reconcile — flagged anomalies sent to your team before close.",
+  },
+  {
+    icon: Building2,
+    title: "Franchise reporting",
+    body: "Royalty, marketing-fee, and brand-compliance reports prepared and filed on your reporting calendar.",
+  },
+  {
+    icon: Leaf,
+    title: "Green Engage submissions",
+    body: "Utility, water, and waste data captured monthly and uploaded to IHG Green Engage on schedule.",
+  },
+  {
+    icon: FileSpreadsheet,
+    title: "CLC reconciliation",
+    body: "CLC Lodging billing reconciled against PMS folios and disputed entries pursued on your behalf.",
+  },
+  {
+    icon: PenLine,
+    title: "Manual entries",
+    body: "Vendor invoices, journal entries, and one-off adjustments captured by Innrly so your AGM stops doing data entry and starts running the hotel.",
+  },
+];
+
+function Page() {
+  return (
+    <div className="bg-background">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-hero opacity-90" aria-hidden />
+        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+            Add-on service
+          </p>
+          <h1 className="mt-4 text-4xl font-bold text-foreground sm:text-5xl">
+            Beyond software — <span className="text-gradient">done-for-you</span> back-office work.
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            The Accountability Pack is an optional per-property add-on. Our team handles the data
+            verification, franchise filings, and manual entries your in-house staff doesn't have
+            time for — using the same Innrly platform you already trust.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button asChild size="lg" className="bg-cta hover:opacity-90">
+              <Link to="/contact">
+                Contact sales for pricing
+                <ArrowRight className="ml-1.5 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link to="/pricing">View Innrly plans</Link>
+            </Button>
+          </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            Per-property pricing varies by portfolio mix and service scope.
+          </p>
+        </div>
+      </section>
+
+      <Section>
+        <SectionHeading
+          eyebrow="What's included"
+          title="Five services your team stops doing the day you add the pack."
+          align="center"
+        />
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((s) => (
+            <div key={s.title} className="aurora-card rounded-2xl p-6">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cta">
+                <s.icon className="h-5 w-5 text-primary-foreground" aria-hidden />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-foreground">{s.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="py-12">
+        <SectionHeading
+          eyebrow="How it works"
+          title="A staffed extension of your back office."
+          align="center"
+        />
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              n: "1",
+              t: "Scope per property",
+              b: "Pick the services you want per property — pack scales with portfolio size.",
+            },
+            {
+              n: "2",
+              t: "Onboard with Innrly",
+              b: "Our team plugs into your Innrly tenant, PMS, and accounting platform within 14 days.",
+            },
+            {
+              n: "3",
+              t: "Monthly cadence",
+              b: "Daily verifications, monthly franchise & Green Engage filings, and a close-of-month report to your CFO.",
+            },
+          ].map((s) => (
+            <div key={s.n} className="aurora-card rounded-2xl p-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+                Step {s.n}
+              </p>
+              <h3 className="mt-2 text-base font-semibold text-foreground">{s.t}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{s.b}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="py-12">
+        <SectionHeading
+          eyebrow="Who it's for"
+          title="When the pack pays for itself."
+          align="center"
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {[
+            "Portfolios growing faster than back-office headcount.",
+            "Properties with IHG Green Engage or franchise reporting deadlines slipping.",
+            "Operators with CLC Lodging exposure and recurring billing disputes.",
+            "GMs spending more than two hours a week on manual data entry.",
+          ].map((i) => (
+            <div key={i} className="flex items-start gap-3 aurora-card rounded-xl p-4">
+              <Check className="mt-0.5 h-5 w-5 shrink-0 text-accent" aria-hidden />
+              <span className="text-sm text-foreground">{i}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <CtaBand
+        title="Get per-property pricing for your portfolio."
+        subtitle="Tell us your portfolio mix and reporting requirements — we'll quote within one business day."
+        primary={{ to: "/contact", label: "Contact sales" }}
+        secondary={{ to: "/pricing", label: "View Innrly plans" }}
+      />
+    </div>
+  );
+}
