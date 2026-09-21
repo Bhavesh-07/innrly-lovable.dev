@@ -8,7 +8,7 @@ __pycache__/
 .env.*
 .env.local
 *.env
-backend/.env
+!backend/.env
 frontend/.env
 db_config.py
 backend/db_config.py
