@@ -1168,9 +1168,10 @@ export function getMetaTags(
   const keywords = dynamicSeo?.keywords || fallbackSeo?.keywords || def?.keywords || ''
   const ogTitle = (dynamicSeo as any)?.ogTitle || (dynamicSeo as any)?.og_title || fallbackSeo?.ogTitle || def?.ogTitle || title
   const ogDescription = (dynamicSeo as any)?.ogDescription || (dynamicSeo as any)?.og_description || fallbackSeo?.ogDescription || def?.ogDescription || description
-  const ogImage = (dynamicSeo as any)?.ogImage || (dynamicSeo as any)?.og_image || fallbackSeo?.ogImage || def?.ogImage || 'https://www.innrly.com/uploads/innrly-logo.png'
+  const rawOgImage = (dynamicSeo as any)?.ogImage || (dynamicSeo as any)?.og_image || fallbackSeo?.ogImage || def?.ogImage || '/uploads/og_1788953918_INNRLYOGImageHomepage.jpg'
+  const ogImage = rawOgImage ? (rawOgImage.startsWith('http') ? rawOgImage : `https://innrly.com${rawOgImage.startsWith('/') ? '' : '/'}${rawOgImage}`) : 'https://innrly.com/uploads/og_1788953918_INNRLYOGImageHomepage.jpg'
   const ogType = (dynamicSeo as any)?.ogType || fallbackSeo?.ogType || def?.ogType || (pathname && pathname.startsWith('/blog/') ? 'article' : 'website')
-  const canonical = dynamicSeo?.canonical || (dynamicSeo as any)?.canonical_url || fallbackSeo?.canonical || def?.canonical || (pathname ? `https://www.innrly.com${pathname === '/' ? '' : pathname}` : undefined)
+  const canonical = dynamicSeo?.canonical || (dynamicSeo as any)?.canonical_url || fallbackSeo?.canonical || def?.canonical || (pathname ? `https://innrly.com${pathname === '/' ? '' : pathname}` : 'https://innrly.com')
   const robots = dynamicSeo?.robots || (dynamicSeo as any)?.robots_meta || fallbackSeo?.robots || def?.robots || 'index, follow'
 
   const tags: Array<{ title?: string; name?: string; content?: string; property?: string }> = [
@@ -1191,6 +1192,10 @@ export function getMetaTags(
   }
   if (ogImage) {
     tags.push({ property: 'og:image', content: ogImage })
+    tags.push({ property: 'og:image:secure_url', content: ogImage })
+    tags.push({ property: 'og:image:type', content: ogImage.endsWith('.png') ? 'image/png' : 'image/jpeg' })
+    tags.push({ property: 'og:image:width', content: '1200' })
+    tags.push({ property: 'og:image:height', content: '630' })
   }
   if (ogType) {
     tags.push({ property: 'og:type', content: ogType })
