@@ -88,16 +88,6 @@ const server = http.createServer(async (req, res) => {
       effectiveHost === 'innrly.com' ||
       effectiveHost === 'www.innrly.com';
 
-    // ALLOW_INDEXING can explicitly enable indexing when required,
-    // but production host detection remains the primary mechanism.
-    const allowIndexing =
-      isProductionHost ||
-      process.env.ALLOW_INDEXING === 'true';
-
-    if (!allowIndexing) {
-      res.setHeader('X-Robots-Tag', 'noindex, nofollow');
-    }
-
     // HSTS should only be sent for HTTPS production traffic
     if (isProductionHost && protocol === 'https') {
       res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains');
