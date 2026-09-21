@@ -1,4 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 170">
-  <rect width="170" height="170" rx="37" fill="#071826"/>
-  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAACqCAYAAAA9dtSCAAADAUlEQVR4nO3d0U0bQRSG0TsRBbgEl+ASnEpCC1SQUEFKghJcQkpwB5OH8IRIItjZWf/LOQXcvUKfdiQM4yoI0JYO6L0fquq0eJN5rq21y9ZL8D53A2acquppwJxZnqvq64hBvff7qvo2YtbOPSx9OYwI9TM7VtV54x0SHJYO+DJgCVidUIkgVCIIlQhCJYJQiSBUIgiVCLN/4X+tqstKs88rzeUGzA710lob8vHla733vsbcgR5baz+2XmKU3vtTTXw5OPqJIFQiCJUIQiWCUIkgVCIIlQhCJYJQiSBUIgiVCEIlglCJIFQiCJUIQiWCUIng7qlAvfdTDbjPaaGpzxdqpp/1yf5HzNFPhNlv1EPv/Tz5mezA7FBPlXXpLzfC0U8EoRJBqEQQKhGESgShEsEnU/v3uPUCVfVr6QCh7txebhB09BNhxBv1Wn++tnFr560XYD2LQ335jstVLud9j4CLfFnA0U8EoRJBqEQQKhGESgShEkGoRBAqEYRKBKESQahEECoRhEoEoRJBqEQQKhGESgShEkGoRBAqEYRKBKESQahEECoRhEoEoRJBqEQQKhGESgShEkGoRBAqEYRKBKESQahEECoRhEoEoRJBqEQQKhGESgShEkGoRBAqEYRKBKESQahEECoRhEoEoRJBqEQQKhGESgShEkGoRBAqEYRKBKESQahEECoRhEoEoRLhbusFWFfv/WnrHarqobV2WTJAqPt33nqBqjosHeDoJ8LiN2rv/VhV94s3gX8YcfQfq+r7gDnwV45+IgiVCEIlglCJIFQiCJUIPpnaudZaW2Puy0ez5zVmv8UblQhCJcLso/9SVQ+Tn/nadePn8wGzQ7221p4nP5MdcPQTQahEECoRhEoEoRJBqEQQKhGESgShEkGoRBAqEYRKBKESQahEECoRhEoEoRJh9l/4n27kYtlRjlsv8D8r/rxPK8190+xQD3UbF8t+JuetFxjB0U8EoRJBqEQQKhGESgShEkGoRBAqEYQKAAAAAAAAAAAAAAC34Dfso0TeGVw4WQAAAABJRU5ErkJggg==" x="0" y="0" width="170" height="170" preserveAspectRatio="xMidYMid meet"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="112" fill="#071826"/>
+  <g transform="translate(256, 260) scale(1.15) translate(-507, -518)">
+    <ellipse cx="528.282" cy="409.255" rx="54.08" ry="42.27" transform="rotate(-14 528.282 409.255)" fill="url(#fav_g0)"/>
+    <path d="M467.02 436.397C467.826 442.328 486.752 462.558 501.104 465.429C526.104 470.429 561.233 475.429 557.353 497.44C554.407 514.146 540.533 606.879 532.852 650.44L532.853 650.44C531.387 661.553 521.913 669.859 510.704 669.859L460.077 669.859C443.356 669.859 430.594 655.121 432.763 638.727L432.733 638.724L467.02 436.397Z" fill="url(#fav_g1)"/>
+    <path d="M467.02 436.397C467.826 442.328 486.752 462.558 501.104 465.429C526.104 470.429 561.233 475.429 557.353 497.44C554.407 514.146 540.533 606.879 532.852 650.44L532.853 650.44C531.387 661.553 521.913 669.859 510.704 669.859L460.077 669.859C443.356 669.859 430.594 655.121 432.763 638.727L432.733 638.724L467.02 436.397Z" fill="url(#fav_g2)" fill-opacity="0.9"/>
+  </g>
+  <defs>
+    <linearGradient id="fav_g0" x1="514.845" y1="397.912" x2="538.371" y2="460.74" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2742DB"/>
+      <stop offset="0.575" stop-color="#1481D9"/>
+      <stop offset="1" stop-color="#00C4D6"/>
+    </linearGradient>
+    <linearGradient id="fav_g1" x1="480" y1="538" x2="545.064" y2="485.458" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2742DB"/>
+      <stop offset="0.617" stop-color="#1385D8"/>
+      <stop offset="1" stop-color="#00C4D6"/>
+    </linearGradient>
+    <linearGradient id="fav_g2" x1="477" y1="581.5" x2="504.201" y2="665.762" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2742DB" stop-opacity="0.32"/>
+      <stop offset="0.5" stop-color="#1383D8" stop-opacity="0.66"/>
+      <stop offset="1" stop-color="#00C4D6"/>
+    </linearGradient>
+  </defs>
 </svg>

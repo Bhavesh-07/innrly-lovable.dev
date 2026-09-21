@@ -25,7 +25,8 @@ const MIME_TYPES = {
   '.woff2': 'font/woff2',
   '.ttf': 'font/ttf',
   '.otf': 'font/otf',
-  '.eot': 'application/vnd.ms-fontobject'
+  '.eot': 'application/vnd.ms-fontobject',
+  '.webmanifest': 'application/manifest+json'
 };
 
 const REDIRECTS = {
@@ -100,22 +101,6 @@ const server = http.createServer(async (req, res) => {
     // HSTS should only be sent for HTTPS production traffic
     if (isProductionHost && protocol === 'https') {
       res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains');
-    }
-
-    // 1. Force HTTPS for all production hosts
-    if (isProductionHost && protocol !== 'https') {
-      const canonicalUrl = `https://www.innrly.com${pathname}${url.search}`;
-      res.writeHead(301, { 'Location': canonicalUrl, 'Content-Type': 'text/plain' });
-      res.end(`Redirecting to ${canonicalUrl}`);
-      return;
-    }
-
-    // 2. Force apex domain to www
-    if (effectiveHost === 'innrly.com') {
-      const canonicalUrl = `https://www.innrly.com${pathname}${url.search}`;
-      res.writeHead(301, { 'Location': canonicalUrl, 'Content-Type': 'text/plain' });
-      res.end(`Redirecting to ${canonicalUrl}`);
-      return;
     }
 
     // Handle /robots.txt dynamically from database
