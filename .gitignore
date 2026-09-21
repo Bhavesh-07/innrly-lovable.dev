@@ -15,11 +15,11 @@ backend/db_config.py
 
 # Node
 node_modules/
-build/
-client/
-server/
+frontend/node_modules/
 .tanstack/
+frontend/.tanstack/
 *.zip
+
 
 # OS generated files
 .DS_Store
