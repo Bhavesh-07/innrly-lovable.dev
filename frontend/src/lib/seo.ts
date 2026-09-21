@@ -30,6 +30,20 @@ export interface SeoTags {
 }
 
 export const defaultSeoData: Record<string, SeoData> = {
+  "/404": {
+    "title": "404 - Page Not Found | Innrly",
+    "description": "The page you are looking for does not exist, has been moved, or is temporarily unavailable.",
+    "keywords": "404, not found, hotel management software, innrly",
+    "ogTitle": "404 - Page Not Found | Innrly",
+    "ogDescription": "The page you are looking for does not exist, has been moved, or is temporarily unavailable.",
+    "ogImage": "/uploads/og_1788953918_INNRLYOGImageHomepage.jpg",
+    "ogType": "website",
+    "canonical": "https://www.innrly.com/404",
+    "robots": "noindex, nofollow",
+    "inSitemap": false,
+    "changefreq": "never",
+    "priority": "0.1"
+  },
   "/": {
     "title": "Innrly - Hotel Management Software | Back-Office Automation",
     "description": "Streamline hotel operations with Innrly. Automate night audit, financial control, labor, reconciliation and business intelligence across your hotel portfolio.",

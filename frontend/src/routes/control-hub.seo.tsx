@@ -177,6 +177,12 @@ const PAGE_GROUPS = [
       { path: "/legal/accessibility", label: "/legal/accessibility (Accessibility Statement)", defaultPriority: "0.4", defaultFreq: "yearly" },
     ],
   },
+  {
+    category: "System & Error Pages",
+    pages: [
+      { path: "/404", label: "/404 (404 Page Not Found)", defaultPriority: "0.1", defaultFreq: "never", defaultInSitemap: false },
+    ],
+  },
 ];
 
 const PAGES = PAGE_GROUPS.flatMap((g) => g.pages.map((p) => p.path));
@@ -341,11 +347,12 @@ function ControlHubSeoPage() {
         PAGE_GROUPS.forEach((group) => {
           group.pages.forEach((p) => {
             const saved = seoMap[p.path];
+            const defaultInSitemap = (p as any).defaultInSitemap !== undefined ? (p as any).defaultInSitemap : true;
             staticList.push({
               path: p.path,
               label: p.label,
               category: group.category,
-              in_sitemap: saved ? Boolean(saved.in_sitemap) : true,
+              in_sitemap: saved ? Boolean(saved.in_sitemap) : defaultInSitemap,
               priority: (saved && saved.priority) || p.defaultPriority || "0.8",
               changefreq: (saved && saved.changefreq) || p.defaultFreq || "monthly",
               isBlog: false
