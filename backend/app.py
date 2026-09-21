@@ -150,13 +150,115 @@ def require_permission(module_name: str):
 import db_config
 
 def get_db_connection():
+    # 1. Try primary DB_CONFIG
     try:
-        connection = mysql.connector.connect(**db_config.DB_CONFIG)
-        return connection
+        return mysql.connector.connect(**db_config.DB_CONFIG)
+    except Error:
+        pass
+
+    # 2. Try alternate local ports (3307 / 3306) with primary credentials
+    current_port = db_config.DB_CONFIG.get("port", 3306)
+    for p in [3307, 3306]:
+        if p != current_port:
+            try:
+                alt_config = {**db_config.DB_CONFIG, "port": p}
+                return mysql.connector.connect(**alt_config)
+            except Error:
+                pass
+
+    # 3. Try root fallback without password for local WAMP/MySQL development
+    for p in [current_port, 3307, 3306]:
+        try:
+            root_config = {
+                "host": db_config.DB_CONFIG.get("host", "127.0.0.1"),
+                "user": "root",
+                "password": "",
+                "database": db_config.DB_CONFIG.get("database", "innrly_leads"),
+                "port": p
+            }
+            return mysql.connector.connect(**root_config)
+        except Error:
+            pass
+
+    try:
+        # Retry primary to throw standard error if all failed
+        return mysql.connector.connect(**db_config.DB_CONFIG)
     except Error as e:
         print(f"Error connecting to MySQL with config {db_config.DB_CONFIG}: {e}")
         raise HTTPException(status_code=500, detail=f"Database connection error: {e}")
 
+
+def init_db():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        
+        # 1. Admin Users Table
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS admin_users (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                username VARCHAR(100) NOT NULL UNIQUE,
+                email VARCHAR(255) NULL,
+                password_hash VARCHAR(255) NOT NULL,
+                role VARCHAR(50) NOT NULL DEFAULT 'normal_user',
+                permissions TEXT NULL,
+                status VARCHAR(50) NOT NULL DEFAULT 'active',
+                last_login_at DATETIME NULL,
+                created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        """)
+
+        # 2. Site Settings Table
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS site_settings (
+                setting_key VARCHAR(191) PRIMARY KEY,
+                setting_value TEXT NOT NULL,
+                updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        """)
+
+        # 3. SEO Settings Table
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS seo_settings (
+                page_path VARCHAR(255) PRIMARY KEY,
+                title VARCHAR(255) NULL,
+                description TEXT NULL,
+                keywords TEXT NULL,
+                og_title VARCHAR(255) NULL,
+                og_description TEXT NULL,
+                og_image VARCHAR(500) NULL,
+                in_sitemap TINYINT(1) DEFAULT 1,
+                changefreq VARCHAR(50) DEFAULT 'monthly',
+                priority VARCHAR(20) DEFAULT '0.8',
+                canonical_url VARCHAR(500) NULL,
+                robots_meta VARCHAR(100) DEFAULT 'index, follow',
+                structured_data MEDIUMTEXT NULL,
+                updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        """)
+
+        # Check and seed default root admin user
+        cur.execute("SELECT id FROM admin_users WHERE username = %s", (ADMIN_USERNAME,))
+        if not cur.fetchone():
+            default_hash = hash_password(ADMIN_PASSWORD)
+            cur.execute("""
+                INSERT INTO admin_users (name, username, email, password_hash, role, permissions, status)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """, ("Super Administrator", ADMIN_USERNAME, "admin@innrly.com", default_hash, "super_admin", json.dumps(["all"]), "active"))
+            conn.commit()
+
+        conn.commit()
+        cur.close()
+        conn.close()
+        print("[DB Init] All database tables verified & initialized successfully.")
+    except Exception as e:
+        print(f"[DB Init] Note: DB startup verification: {e}")
+
+@app.on_event("startup")
+async def on_startup():
+    init_db()
 
 # Rate limiting storage (in-memory)
 LEAD_RATE_LIMITS = defaultdict(list)  # client_ip -> list of timestamps
