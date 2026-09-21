@@ -54,7 +54,7 @@ export async function getRecaptchaToken(action: string = "lead_submit"): Promise
 }
 
 export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; error?: string }> {
-  const url = import.meta.env.VITE_LEAD_WEBHOOK_URL as string | undefined;
+  const url = (import.meta.env.VITE_LEAD_WEBHOOK_URL as string | undefined) || "/api/leads";
   const isNewsletter = (payload as { kind?: string }).kind === "newsletter";
 
   // Fetch reCAPTCHA v3 token if available

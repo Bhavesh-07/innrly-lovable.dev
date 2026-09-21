@@ -89,7 +89,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         let finalEntries: SitemapEntry[] = [];
 
         try {
-          const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8000";
+          const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8005";
           const res = await fetch(`${backendUrl}/api/sitemap-entries`);
           if (res.ok) {
             const data = await res.json();

@@ -34,7 +34,7 @@ export const Route = createFileRoute("/control-hub/settings")({
 function ControlHubSettings() {
   const [adminEmail, setAdminEmail] = useState("sales@innrly.com");
   const [alertThreshold, setAlertThreshold] = useState("10");
-  const [webhookUrl, setWebhookUrl] = useState("http://127.0.0.1:8000/leads");
+  const [webhookUrl, setWebhookUrl] = useState("/api/leads");
   const [smtpHost, setSmtpHost] = useState("smtp.office365.com");
   const [smtpPort, setSmtpPort] = useState("587");
   const [smtpUser, setSmtpUser] = useState("donotreply@innrly.com");
@@ -53,7 +53,7 @@ function ControlHubSettings() {
 
   useEffect(() => {
     if (typeof window !== "undefined" && hasPermission("settings")) {
-      const baseUrl = import.meta.env.VITE_LEAD_WEBHOOK_URL || "http://127.0.0.1:8000/leads";
+      const baseUrl = (import.meta as any).env?.VITE_LEAD_WEBHOOK_URL || "/api/leads";
       const settingsUrl = baseUrl.replace(/\/leads\/?$/, "/settings");
       fetch(settingsUrl)
         .then(res => res.json())
@@ -100,7 +100,7 @@ function ControlHubSettings() {
     setIsTestingSmtp(true);
     setTestSmtpResult(null);
     try {
-      const baseUrl = import.meta.env.VITE_LEAD_WEBHOOK_URL || "http://127.0.0.1:8000/leads";
+      const baseUrl = (import.meta as any).env?.VITE_LEAD_WEBHOOK_URL || "/api/leads";
       const testUrl = baseUrl.replace(/\/leads\/?$/, "/settings/test-smtp");
       
       const res = await fetch(testUrl, {
@@ -133,7 +133,7 @@ function ControlHubSettings() {
     e.preventDefault();
     if (typeof window !== "undefined") {
       try {
-        const baseUrl = import.meta.env.VITE_LEAD_WEBHOOK_URL || "http://127.0.0.1:8000/leads";
+        const baseUrl = (import.meta as any).env?.VITE_LEAD_WEBHOOK_URL || "/api/leads";
         const settingsUrl = baseUrl.replace(/\/leads\/?$/, "/settings");
         
         const saveList = [

@@ -39,7 +39,7 @@ export function TrialModal() {
     if (sessionStorage.getItem(SESSION_KEY)) return;
     
     // Fetch from backend
-    fetch("http://127.0.0.1:8000/settings")
+    fetch("/api/settings")
       .then(res => res.json())
       .then(data => {
         if (data && data.innrly_trial_modal_disabled === "true") return;

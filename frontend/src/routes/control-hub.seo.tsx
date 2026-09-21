@@ -259,7 +259,7 @@ function ControlHubSeoPage() {
   const [scriptsLoading, setScriptsLoading] = useState(false);
   const [scriptsSaving, setScriptsSaving] = useState(false);
 
-  const API_BASE = typeof window === "undefined" ? (process.env.BACKEND_URL || "http://127.0.0.1:8000") : "/api";
+  const API_BASE = typeof window === "undefined" ? (process.env.BACKEND_URL || "http://127.0.0.1:8005") : "/api";
 
   useEffect(() => {
     if (hasPermission("seo")) {

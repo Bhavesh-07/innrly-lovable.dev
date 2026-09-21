@@ -85,7 +85,7 @@ function ControlHubTestimonialsPage() {
   const [editingItem, setEditingItem] = useState<Testimonial | null>(null);
   const [deleteConfirmId, setDeleteConfirmId] = useState<number | null>(null);
 
-  const API_BASE = typeof window === "undefined" ? (process.env.BACKEND_URL || "http://127.0.0.1:8000") : "/api";
+  const API_BASE = typeof window === "undefined" ? (process.env.BACKEND_URL || "http://127.0.0.1:8005") : "/api";
 
   useEffect(() => {
     if (hasPermission("testimonials")) {

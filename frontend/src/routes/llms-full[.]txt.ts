@@ -7,7 +7,7 @@ export const Route = createFileRoute("/llms-full.txt")({
         let content = `# Innrly Full Documentation\n\n> Comprehensive AI Search Knowledge Base.\n`;
 
         try {
-          const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8000";
+          const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8005";
           const res = await fetch(`${backendUrl}/api/llms-txt`);
           if (res.ok) {
             const data = await res.json();

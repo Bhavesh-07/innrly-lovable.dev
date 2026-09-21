@@ -7,7 +7,7 @@ export const Route = createFileRoute("/llms.txt")({
         let content = `# Innrly\n\n> Hotel management software for back-office automation, business intelligence, and labor management.\n`;
 
         try {
-          const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8000";
+          const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8005";
           const res = await fetch(`${backendUrl}/api/llms-txt`);
           if (res.ok) {
             const data = await res.json();

@@ -34,9 +34,7 @@ export function Header() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const baseUrl = import.meta.env.VITE_LEAD_WEBHOOK_URL || "http://127.0.0.1:8000/leads";
-      const settingsUrl = baseUrl.replace(/\/leads\/?$/, "/settings");
-      fetch(settingsUrl)
+      fetch("/api/settings")
         .then(res => res.json())
         .then(data => {
           if (data && data.innrly_login_link) {

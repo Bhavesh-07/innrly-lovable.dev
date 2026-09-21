@@ -57,7 +57,7 @@ function renderErrorPage() {
 //#region src/server.ts
 var serverEntryPromise;
 async function getServerEntry() {
-	if (!serverEntryPromise) serverEntryPromise = import("./assets/server-D1o14Pgo.js").then((m) => m.default ?? m);
+	if (!serverEntryPromise) serverEntryPromise = import("./assets/server-DGdXqI98.js").then((m) => m.default ?? m);
 	return serverEntryPromise;
 }
 function brandedErrorResponse() {

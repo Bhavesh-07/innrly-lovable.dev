@@ -17,7 +17,7 @@ export const Route = createFileRoute("/blog/")({
   loader: async () => {
     let posts: BlogPost[] = [];
     try {
-      const baseUrl = typeof window === "undefined" ? (process.env.BACKEND_URL || "http://127.0.0.1:8000") : "/api";
+      const baseUrl = typeof window === "undefined" ? (process.env.BACKEND_URL || "http://127.0.0.1:8005") : "/api";
       const res = await fetch(`${baseUrl}/blog`);
       if (res.ok) {
         const data: BlogPost[] = await res.json();

@@ -542,7 +542,7 @@ export const Route = createFileRoute("/blog/$slug")({
     // 1. Try to fetch dynamic blog from MySQL backend API
     try {
       const baseUrl = typeof window === "undefined" 
-        ? (process.env.BACKEND_URL || "http://127.0.0.1:8000") 
+        ? (process.env.BACKEND_URL || "http://127.0.0.1:8005") 
         : "/api";
       const res = await fetch(`${baseUrl}/blog/${params.slug}`);
       if (res.ok) {

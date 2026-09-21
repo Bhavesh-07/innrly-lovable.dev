@@ -7,7 +7,7 @@ export const Route = createFileRoute("/robots.txt")({
         let content = `User-agent: *\nAllow: /\n\nDisallow: /control-hub\nDisallow: /control-hub/*\nDisallow: /api/admin/*\n\nSitemap: https://www.innrly.com/sitemap.xml\n`;
 
         try {
-          const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8000";
+          const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8005";
           const res = await fetch(`${backendUrl}/api/robots-txt`);
           if (res.ok) {
             const data = await res.json();

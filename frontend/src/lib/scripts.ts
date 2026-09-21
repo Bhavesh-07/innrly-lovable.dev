@@ -16,7 +16,7 @@ export const defaultSiteScripts: SiteScriptsSettings = {
 
 const API_BASE =
   typeof window === "undefined"
-    ? (process.env.BACKEND_URL || process.env.VITE_BACKEND_URL || "http://127.0.0.1:8000")
+    ? (process.env.BACKEND_URL || process.env.VITE_BACKEND_URL || "http://127.0.0.1:8005")
     : "/api";
 
 export async function fetchSiteScripts(): Promise<SiteScriptsSettings> {
