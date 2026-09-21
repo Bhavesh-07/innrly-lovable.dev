@@ -234,16 +234,25 @@ const server = http.createServer(async (req, res) => {
                            pathname === '/llms-full.txt';
 
     if (!isDynamicRoute) {
-      const localPath = path.join(CLIENT_DIR, pathname);
-      const relative = path.relative(CLIENT_DIR, localPath);
-      const isSafe = relative && !relative.startsWith('..') && !path.isAbsolute(relative);
+      const searchDirs = [
+        CLIENT_DIR,
+        path.join(__dirname, 'public'),
+        path.join(__dirname, 'client'),
+        path.join(__dirname, '..', 'backend', 'uploads')
+      ];
 
-      if (isSafe && fs.existsSync(localPath) && fs.statSync(localPath).isFile()) {
-        const ext = path.extname(localPath).toLowerCase();
-        const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-        res.writeHead(200, { 'Content-Type': contentType });
-        fs.createReadStream(localPath).pipe(res);
-        return;
+      for (const dir of searchDirs) {
+        const localPath = path.join(dir, pathname.replace(/^\/uploads\//, ''));
+        const directPath = path.join(dir, pathname);
+        const candidate = fs.existsSync(directPath) && fs.statSync(directPath).isFile() ? directPath : (fs.existsSync(localPath) && fs.statSync(localPath).isFile() ? localPath : null);
+
+        if (candidate) {
+          const ext = path.extname(candidate).toLowerCase();
+          const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+          res.writeHead(200, { 'Content-Type': contentType, 'Cache-Control': 'public, max-age=86400' });
+          fs.createReadStream(candidate).pipe(res);
+          return;
+        }
       }
     }
 
