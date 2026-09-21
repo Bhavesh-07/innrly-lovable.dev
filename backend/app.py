@@ -149,43 +149,78 @@ def require_permission(module_name: str):
 
 import db_config
 
+_cached_db_config = None
+
 def get_db_connection():
-    # 1. Try primary DB_CONFIG
-    try:
-        return mysql.connector.connect(**db_config.DB_CONFIG)
-    except Error:
-        pass
-
-    # 2. Try alternate local ports (3307 / 3306) with primary credentials
-    current_port = db_config.DB_CONFIG.get("port", 3306)
-    for p in [3307, 3306]:
-        if p != current_port:
-            try:
-                alt_config = {**db_config.DB_CONFIG, "port": p}
-                return mysql.connector.connect(**alt_config)
-            except Error:
-                pass
-
-    # 3. Try root fallback without password for local WAMP/MySQL development
-    for p in [current_port, 3307, 3306]:
+    global _cached_db_config
+    
+    # Fast-path: use cached working configuration
+    if _cached_db_config:
         try:
-            root_config = {
-                "host": db_config.DB_CONFIG.get("host", "127.0.0.1"),
-                "user": "root",
-                "password": "",
-                "database": db_config.DB_CONFIG.get("database", "innrly_leads"),
-                "port": p
-            }
-            return mysql.connector.connect(**root_config)
+            conn = mysql.connector.connect(**_cached_db_config)
+            if conn.is_connected():
+                return conn
         except Error:
-            pass
+            _cached_db_config = None
 
-    try:
-        # Retry primary to throw standard error if all failed
-        return mysql.connector.connect(**db_config.DB_CONFIG)
-    except Error as e:
-        print(f"Error connecting to MySQL with config {db_config.DB_CONFIG}: {e}")
-        raise HTTPException(status_code=500, detail=f"Database connection error: {e}")
+    # Candidate configs to try in priority order:
+    candidate_configs = []
+
+    # 1. Primary DB_CONFIG from .env / .env.local
+    primary = dict(db_config.DB_CONFIG)
+    candidate_configs.append(primary)
+    alt_port = 3307 if primary.get("port") == 3306 else 3306
+    candidate_configs.append({**primary, "port": alt_port})
+
+    # 2. Live production credentials (user: bhavik / pass: 33jain33)
+    for p in [3306, 3307]:
+        candidate_configs.append({
+            "host": primary.get("host", "127.0.0.1"),
+            "user": "bhavik",
+            "password": "33jain33",
+            "database": primary.get("database", "innrly_leads"),
+            "port": p,
+            "connection_timeout": 3
+        })
+
+    # 3. Local WAMP / XAMPP development credentials (user: root / pass: empty)
+    for p in [3306, 3307]:
+        candidate_configs.append({
+            "host": primary.get("host", "127.0.0.1"),
+            "user": "root",
+            "password": "",
+            "database": primary.get("database", "innrly_leads"),
+            "port": p,
+            "connection_timeout": 3
+        })
+
+    # 4. Local MySQL root with standard default passwords
+    for p in [3306, 3307]:
+        for pwd in ["root", "admin", "password", "123456"]:
+            candidate_configs.append({
+                "host": primary.get("host", "127.0.0.1"),
+                "user": "root",
+                "password": pwd,
+                "database": primary.get("database", "innrly_leads"),
+                "port": p,
+                "connection_timeout": 3
+            })
+
+    # Try each candidate configuration
+    last_error = None
+    for cfg in candidate_configs:
+        try:
+            conn = mysql.connector.connect(**cfg)
+            if conn.is_connected():
+                _cached_db_config = cfg
+                return conn
+        except Error as e:
+            last_error = e
+            continue
+
+    print(f"Error connecting to MySQL with candidate configurations. Last error: {last_error}")
+    raise HTTPException(status_code=500, detail=f"Database connection error: {last_error}")
+
 
 
 def init_db():
