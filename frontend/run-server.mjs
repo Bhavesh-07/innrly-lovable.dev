@@ -121,7 +121,7 @@ const server = http.createServer(async (req, res) => {
     // Handle /robots.txt dynamically from database
     if (pathname === '/robots.txt') {
       try {
-        const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
+        const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8005';
         const response = await fetch(`${BACKEND_URL}/api/robots-txt`);
         if (response.ok) {
           const data = await response.json();
@@ -142,7 +142,7 @@ const server = http.createServer(async (req, res) => {
     // Handle /llms.txt and /llms-full.txt dynamically from database
     if (pathname === '/llms.txt' || pathname === '/llms-full.txt') {
       try {
-        const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
+        const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8005';
         const response = await fetch(`${BACKEND_URL}/api/llms-txt`);
         if (response.ok) {
           const data = await response.json();
@@ -177,15 +177,16 @@ const server = http.createServer(async (req, res) => {
                       pathname === '/telemetry' || pathname.startsWith('/telemetry/');
 
     if (isApiPath) {
-      const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
+      const BACKEND_URL = process.env.BACKEND_URL || 'http://127.0.0.1:8005';
       const targetPath = pathname.startsWith('/api/') ? pathname.replace(/^\/api/, '') : pathname;
       const backendUrl = `${BACKEND_URL}${targetPath}${url.search}`;
+      const backendHost = new URL(backendUrl).host;
       
       const proxyReq = http.request(backendUrl, {
         method: req.method,
         headers: {
           ...req.headers,
-          host: '127.0.0.1:8000'
+          host: backendHost
         },
         timeout: 10000
       }, (proxyRes) => {

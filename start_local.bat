@@ -19,7 +19,7 @@ if %errorlevel% neq 0 (
 )
 
 :: Start Backend
-echo Starting Python FastAPI Backend on http://127.0.0.1:8000...
+echo Starting Python FastAPI Backend on http://127.0.0.1:8005...
 cd /d "%~dp0backend"
 start "Innrly Backend (FastAPI)" cmd /k "python app.py"
 
@@ -39,6 +39,6 @@ echo.
 echo ====================================================
 echo Innrly is now running!
 echo - Frontend: http://localhost:3000
-echo - Backend API & Docs: http://127.0.0.1:8000/docs
+echo - Backend API & Docs: http://127.0.0.1:8005/docs
 echo ====================================================
 timeout /t 5

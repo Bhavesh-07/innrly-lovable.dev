@@ -3294,4 +3294,5 @@ async def upload_seo_og_image(file: UploadFile = File(...), current_user: dict =
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=False)
+    port = int(os.environ.get("PORT", 8005))
+    uvicorn.run("app:app", host="127.0.0.1", port=port, reload=False)

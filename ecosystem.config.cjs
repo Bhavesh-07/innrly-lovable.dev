@@ -8,12 +8,14 @@ module.exports = {
       script: "run-server.mjs",
       instances: 1,
       autorestart: true,
+      restart_delay: 3000,
+      min_uptime: "5s",
       watch: false,
       max_memory_restart: "1G", // Automatically restarts if memory exceeds 1GB
       env: {
         NODE_ENV: "production",
         PORT: 3000,
-        BACKEND_URL: "http://127.0.0.1:8000"
+        BACKEND_URL: "http://127.0.0.1:8005"
       },
       error_file: path.join(__dirname, "backend", "logs", "frontend_pm2_error.log"),
       out_file: path.join(__dirname, "backend", "logs", "frontend_pm2_out.log"),
@@ -27,10 +29,12 @@ module.exports = {
       interpreter: "python", // Uses system Python interpreter
       instances: 1,
       autorestart: true,
+      restart_delay: 3000,
+      min_uptime: "5s",
       watch: false,
       max_memory_restart: "1G", // Automatically restarts if Python leaks memory
       env: {
-        PORT: 8000
+        PORT: 8005
       },
       error_file: path.join(__dirname, "backend", "logs", "backend_pm2_error.log"),
       out_file: path.join(__dirname, "backend", "logs", "backend_pm2_out.log"),

@@ -24,3 +24,6 @@ server/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Deployment Guides
+PORT_8005_UPDATE_GUIDE.md
