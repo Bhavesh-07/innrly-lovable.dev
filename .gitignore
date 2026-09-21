@@ -4,7 +4,12 @@ __pycache__/
 *$py.class
 
 # Environment and Config files
+.env
+.env.*
 .env.local
+*.env
+backend/.env
+frontend/.env
 db_config.py
 backend/db_config.py
 
