@@ -189,7 +189,7 @@ export const Route = createFileRoute("/glossary")({
         "/glossary"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/glossary" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/glossary" }],
     scripts: [
       {
         type: "application/ld+json",

@@ -80,7 +80,7 @@ def seed():
                 "hotel management software, back-office automation, hotel BI, labor management",
                 "Innrly — One platform for total hotel control",
                 "Automate financials, streamline operations, and manage performance across your entire hotel portfolio with Innrly (sometimes spelled Innerly).",
-                "https://www.innrly.com/og/home.jpg"
+                "https://innrly.com/og/home.jpg"
             ),
             (
                 "/about",
@@ -89,7 +89,7 @@ def seed():
                 "about innrly, hotel operator software, vimal patel",
                 "About Innrly — Built by an operator, since 2007",
                 "19 years inside our own hotels before we sold it to yours. Built by Vimal Patel of Q Hotels Management.",
-                "https://www.innrly.com/og/about.jpg"
+                "https://innrly.com/og/about.jpg"
             ),
             (
                 "/pricing",
@@ -98,7 +98,7 @@ def seed():
                 "hotel software pricing, innrly pricing, transparent pricing",
                 "Innrly Pricing — Simple, flat-rate hotel control",
                 "90-day free trial on your real data. No setup fees, no contracts.",
-                "https://www.innrly.com/og/pricing.jpg"
+                "https://innrly.com/og/pricing.jpg"
             ),
             (
                 "/contact",
@@ -107,7 +107,7 @@ def seed():
                 "book innrly demo, hotel software demo, contact innrly",
                 "Book an Innrly Demo — 20 minutes to total control",
                 "Schedule a walkthrough on your own data. See Innrly's PMS-agnostic automation live.",
-                "https://www.innrly.com/og/contact.jpg"
+                "https://innrly.com/og/contact.jpg"
             ),
             (
                 "/features",
@@ -116,7 +116,7 @@ def seed():
                 "innrly features, night audit automation, ota reconciliation",
                 "Innrly Features — PMS-agnostic back-office automation",
                 "Explore the exceptions dashboard, invoice capture, bank matching, and daily labor tracking.",
-                "https://www.innrly.com/og/features.jpg"
+                "https://innrly.com/og/features.jpg"
             ),
             (
                 "/security",
@@ -125,7 +125,7 @@ def seed():
                 "hotel software security, data protection, soc 2 hotel software",
                 "Innrly Security — Bank-grade protection by design",
                 "Read-only PMS connections, daily backup encryption, and enterprise access control.",
-                "https://www.innrly.com/og/security.jpg"
+                "https://innrly.com/og/security.jpg"
             ),
             (
                 "/developers",
@@ -134,7 +134,7 @@ def seed():
                 "innrly developer api, hotel software api, webhook integration",
                 "Innrly Developer Portal — Open APIs for hospitality",
                 "Integrate your PMS, accounting GL, and payroll systems via our REST APIs.",
-                "https://www.innrly.com/og/developers.jpg"
+                "https://innrly.com/og/developers.jpg"
             )
         ]
         

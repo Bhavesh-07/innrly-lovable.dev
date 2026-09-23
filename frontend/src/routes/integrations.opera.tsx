@@ -35,7 +35,7 @@ export const Route = createFileRoute("/integrations/opera")({
         "/integrations/opera"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/integrations/opera" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/integrations/opera" }],
     scripts: [
       {
         type: "application/ld+json",

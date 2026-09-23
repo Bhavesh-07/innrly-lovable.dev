@@ -16,7 +16,7 @@ export const Route = createFileRoute("/legal/accessibility")({
         "/legal/accessibility"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/legal/accessibility" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/legal/accessibility" }],
     scripts: [
       {
         type: "application/ld+json",

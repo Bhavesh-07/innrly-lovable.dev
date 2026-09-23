@@ -38,7 +38,7 @@ export const Route = createFileRoute("/hotel-back-office-automation")({
         "/hotel-back-office-automation"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/hotel-back-office-automation" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/hotel-back-office-automation" }],
     scripts: [
       {
         type: "application/ld+json",

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/legal/privacy")({
         "/legal/privacy"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/legal/privacy" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/legal/privacy" }],
     scripts: [
       {
         type: "application/ld+json",

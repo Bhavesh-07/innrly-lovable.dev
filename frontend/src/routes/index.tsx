@@ -43,7 +43,7 @@ export const Route = createFileRoute("/")({
         content: "You sleep. Innrly works. — back-office automation for 200+ hotels.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com" }],
+    links: [{ rel: "canonical", href: "https://innrly.com" }],
     scripts: [
       {
         type: "application/ld+json",

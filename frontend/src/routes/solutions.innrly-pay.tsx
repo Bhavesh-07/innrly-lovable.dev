@@ -24,7 +24,7 @@ export const Route = createFileRoute("/solutions/innrly-pay")({
         "/solutions/innrly-pay"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/solutions/innrly-pay" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/solutions/innrly-pay" }],
     scripts: [
       {
         type: "application/ld+json",

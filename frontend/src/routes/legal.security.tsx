@@ -16,7 +16,7 @@ export const Route = createFileRoute("/legal/security")({
         "/legal/security"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/legal/security" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/legal/security" }],
     scripts: [
       {
         type: "application/ld+json",

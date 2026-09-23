@@ -630,7 +630,7 @@ export const Route = createFileRoute("/blog/$slug")({
           { property: "og:url", content: `/blog/${loaderData.slug}` },
         ]
       : [],
-    links: loaderData ? [{ rel: "canonical", href: `https://www.innrly.com/blog/${loaderData.slug}` }] : [],
+    links: loaderData ? [{ rel: "canonical", href: `https://innrly.com/blog/${loaderData.slug}` }] : [],
     scripts: loaderData
       ? [{
           type: "application/ld+json",
@@ -646,7 +646,7 @@ export const Route = createFileRoute("/blog/$slug")({
               name: "Innrly",
               logo: { "@type": "ImageObject", url: "/favicon.svg" },
             },
-            mainEntityOfPage: { "@type": "WebPage", "@id": `https://www.innrly.com/blog/${loaderData.slug}` },
+            mainEntityOfPage: { "@type": "WebPage", "@id": `https://innrly.com/blog/${loaderData.slug}` },
           }),
         }, {
           type: "application/ld+json",

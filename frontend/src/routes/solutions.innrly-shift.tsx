@@ -25,7 +25,7 @@ export const Route = createFileRoute("/solutions/innrly-shift")({
         "/solutions/innrly-shift"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/solutions/innrly-shift" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/solutions/innrly-shift" }],
     scripts: [
       {
         type: "application/ld+json",

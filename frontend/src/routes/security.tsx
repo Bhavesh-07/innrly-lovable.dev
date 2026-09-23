@@ -84,7 +84,7 @@ export const Route = createFileRoute("/security")({
     meta: [
       ...getMetaTags(loaderData?.seo || null, defaultSeoData["/security"], "/security"),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/security" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/security" }],
     scripts: [
       {
         type: "application/ld+json",

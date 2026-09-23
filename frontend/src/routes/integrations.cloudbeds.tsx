@@ -31,7 +31,7 @@ export const Route = createFileRoute("/integrations/cloudbeds")({
         "/integrations/cloudbeds"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/integrations/cloudbeds" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/integrations/cloudbeds" }],
     scripts: [
       {
         type: "application/ld+json",

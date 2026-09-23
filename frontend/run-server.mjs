@@ -86,7 +86,7 @@ const server = http.createServer(async (req, res) => {
     // Only these hosts are production hosts
     const isProductionHost =
       effectiveHost === 'innrly.com' ||
-      effectiveHost === 'www.innrly.com';
+      effectiveHost === 'innrly.com';
 
     // HSTS should only be sent for HTTPS production traffic
     if (isProductionHost && protocol === 'https') {
@@ -104,11 +104,11 @@ const server = http.createServer(async (req, res) => {
             'Content-Type': 'text/plain; charset=utf-8',
             'Cache-Control': 'public, max-age=3600'
           });
-          res.end(data.content || `User-agent: *\nAllow: /\n\nSitemap: https://www.innrly.com/sitemap.xml\n`);
+          res.end(data.content || `User-agent: *\nAllow: /\n\nSitemap: https://innrly.com/sitemap.xml\n`);
           return;
         }
       } catch (e) {}
-      const fallbackRobots = `User-agent: *\nAllow: /\n\nSitemap: https://www.innrly.com/sitemap.xml\n`;
+      const fallbackRobots = `User-agent: *\nAllow: /\n\nSitemap: https://innrly.com/sitemap.xml\n`;
       res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
       res.end(fallbackRobots);
       return;

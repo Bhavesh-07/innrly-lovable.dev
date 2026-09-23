@@ -52,7 +52,7 @@ export const Route = createFileRoute("/pricing")({
         content: "Priced per door, not per seat. No per-user fees. 90-day trial.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/pricing" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/pricing" }],
     scripts: [
       {
         type: "application/ld+json",

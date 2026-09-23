@@ -20,7 +20,7 @@ export const Route = createFileRoute("/about")({
           "We ate our own cooking for 16 years — built by Vimal Patel inside Q Hotels Management.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/about" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/about" }],
     scripts: [
       {
         type: "application/ld+json",

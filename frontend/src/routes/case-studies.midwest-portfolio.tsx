@@ -21,7 +21,7 @@ export const Route = createFileRoute("/case-studies/midwest-portfolio")({
         "/case-studies/midwest-portfolio"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/case-studies/midwest-portfolio" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/case-studies/midwest-portfolio" }],
     scripts: [
       {
         type: "application/ld+json",

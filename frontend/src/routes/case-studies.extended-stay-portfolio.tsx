@@ -21,7 +21,7 @@ export const Route = createFileRoute("/case-studies/extended-stay-portfolio")({
         "/case-studies/extended-stay-portfolio"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/case-studies/extended-stay-portfolio" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/case-studies/extended-stay-portfolio" }],
     scripts: [
       {
         type: "application/ld+json",

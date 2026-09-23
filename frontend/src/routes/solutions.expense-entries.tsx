@@ -24,7 +24,7 @@ export const Route = createFileRoute("/solutions/expense-entries")({
       ),
       { property: "og:image:alt", content: "The $400 invoice no one coded. We found it." },
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/solutions/expense-entries" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/solutions/expense-entries" }],
     scripts: [
       breadcrumbLd([
         { name: "Home", url: "/" },

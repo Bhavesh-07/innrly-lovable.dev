@@ -23,7 +23,7 @@ export const Route = createFileRoute("/solutions/financial-control")({
         "/solutions/financial-control"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/solutions/financial-control" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/solutions/financial-control" }],
     scripts: [
       {
         type: "application/ld+json",

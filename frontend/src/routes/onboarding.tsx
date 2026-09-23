@@ -47,7 +47,7 @@ export const Route = createFileRoute("/onboarding")({
         "/onboarding"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/onboarding" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/onboarding" }],
   }),
 });
 

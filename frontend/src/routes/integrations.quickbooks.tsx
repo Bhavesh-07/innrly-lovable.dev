@@ -35,7 +35,7 @@ export const Route = createFileRoute("/integrations/quickbooks")({
         "/integrations/quickbooks"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/integrations/quickbooks" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/integrations/quickbooks" }],
     scripts: [
       {
         type: "application/ld+json",

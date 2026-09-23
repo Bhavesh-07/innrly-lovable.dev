@@ -16,7 +16,7 @@ export const Route = createFileRoute("/legal/cookies")({
         "/legal/cookies"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/legal/cookies" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/legal/cookies" }],
     scripts: [
       {
         type: "application/ld+json",

@@ -46,7 +46,7 @@ export const Route = createFileRoute("/industries/extended-stay")({
         "/industries/extended-stay"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/industries/extended-stay" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/industries/extended-stay" }],
     scripts: [
       breadcrumbLd([
         { name: "Home", url: "/" },

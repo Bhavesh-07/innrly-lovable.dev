@@ -24,7 +24,7 @@ export const Route = createFileRoute("/solutions/reconciliation")({
         "/solutions/reconciliation"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/solutions/reconciliation" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/solutions/reconciliation" }],
     scripts: [
       {
         type: "application/ld+json",

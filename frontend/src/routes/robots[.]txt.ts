@@ -4,7 +4,7 @@ export const Route = createFileRoute("/robots.txt")({
   server: {
     handlers: {
       GET: async ({ request }) => {
-        let content = `User-agent: *\nAllow: /\n\nDisallow: /control-hub\nDisallow: /control-hub/*\nDisallow: /api/admin/*\n\nSitemap: https://www.innrly.com/sitemap.xml\n`;
+        let content = `User-agent: *\nAllow: /\n\nDisallow: /control-hub\nDisallow: /control-hub/*\nDisallow: /api/admin/*\n\nSitemap: https://innrly.com/sitemap.xml\n`;
 
         try {
           const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8005";

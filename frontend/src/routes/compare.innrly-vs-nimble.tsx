@@ -39,7 +39,7 @@ export const Route = createFileRoute("/compare/innrly-vs-nimble")({
         "/compare/innrly-vs-nimble"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/compare/innrly-vs-nimble" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/compare/innrly-vs-nimble" }],
     scripts: [
       {
         type: "application/ld+json",

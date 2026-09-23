@@ -26,7 +26,7 @@ export const Route = createFileRoute("/services/accountability-pack")({
         "/services/accountability-pack"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/services/accountability-pack" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/services/accountability-pack" }],
     scripts: [
       {
         type: "application/ld+json",

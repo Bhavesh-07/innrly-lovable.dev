@@ -106,7 +106,7 @@ export const Route = createFileRoute("/compare/")({
         "/compare"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/compare" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/compare" }],
     scripts: [
       {
         type: "application/ld+json",

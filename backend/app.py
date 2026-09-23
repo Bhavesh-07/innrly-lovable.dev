@@ -591,7 +591,7 @@ def trigger_lead_emails(payload) -> tuple[bool, Optional[str]]:
         submitter_body = f"""<h1>Welcome to the Innrly Newsletter!</h1>
 <p>Thank you for subscribing to the Innrly monthly newsletter. We are excited to share hospitality tech insights, night audit automation tips, and back-office best practices directly to your inbox.</p>
 <p>If you didn't sign up for this newsletter, you can safely unsubscribe by clicking below.</p>
-<a href="https://www.innrly.com/unsubscribe?email={lead_email}" class="button">Unsubscribe</a>"""
+<a href="https://innrly.com/unsubscribe?email={lead_email}" class="button">Unsubscribe</a>"""
         
         sales_body_rows = [
             f"<tr><th>Source</th><td>Newsletter Subscription</td></tr>",
@@ -615,7 +615,7 @@ def trigger_lead_emails(payload) -> tuple[bool, Optional[str]]:
     <tr><th>Message</th><td>{message or 'N/A'}</td></tr>
 </table>
 <p>In the meantime, feel free to explore our solutions or read our buyer's guide.</p>
-<a href="https://www.innrly.com/features" class="button">Explore Features</a>"""
+<a href="https://innrly.com/features" class="button">Explore Features</a>"""
         
         sales_body_rows = [
             f"<tr><th>Source</th><td>Contact Form</td></tr>",
@@ -644,7 +644,7 @@ def trigger_lead_emails(payload) -> tuple[bool, Optional[str]]:
     <tr><th>PMS</th><td>{pms or 'N/A'}</td></tr>
 </table>
 <p>We look forward to helping you automate your back office!</p>
-<a href="https://www.innrly.com/onboarding" class="button">See Onboarding Guide</a>"""
+<a href="https://innrly.com/onboarding" class="button">See Onboarding Guide</a>"""
         
         sales_body_rows = [
             f"<tr><th>Source</th><td>Trial Request</td></tr>",
@@ -686,7 +686,7 @@ def trigger_lead_emails(payload) -> tuple[bool, Optional[str]]:
     <tr><th>Work Phone</th><td>{c_work}</td></tr>
     <tr><th>Properties to Onboard</th><td>{properties_count}</td></tr>
 </table>
-<a href="https://www.innrly.com/onboarding" class="button">Onboarding Portal</a>"""
+<a href="https://innrly.com/onboarding" class="button">Onboarding Portal</a>"""
             
             sales_body_rows = [
                 f"<tr><th>Source</th><td>Onboarding Application</td></tr>",
@@ -2571,10 +2571,10 @@ async def get_robots_txt():
     try:
         cursor.execute("SELECT setting_value FROM site_settings WHERE setting_key = 'robots_txt'")
         row = cursor.fetchone()
-        content = row["setting_value"] if row else "User-agent: *\nAllow: /\n\nSitemap: https://www.innrly.com/sitemap.xml\n"
+        content = row["setting_value"] if row else "User-agent: *\nAllow: /\n\nSitemap: https://innrly.com/sitemap.xml\n"
         return {"content": content}
     except Exception:
-        return {"content": "User-agent: *\nAllow: /\n\nSitemap: https://www.innrly.com/sitemap.xml\n"}
+        return {"content": "User-agent: *\nAllow: /\n\nSitemap: https://innrly.com/sitemap.xml\n"}
     finally:
         cursor.close()
         connection.close()

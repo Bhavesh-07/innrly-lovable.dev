@@ -21,7 +21,7 @@ export const Route = createFileRoute("/case-studies/urban-full-service")({
         "/case-studies/urban-full-service"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/case-studies/urban-full-service" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/case-studies/urban-full-service" }],
     scripts: [
       {
         type: "application/ld+json",

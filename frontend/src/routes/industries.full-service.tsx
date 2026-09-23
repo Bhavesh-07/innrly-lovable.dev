@@ -46,7 +46,7 @@ export const Route = createFileRoute("/industries/full-service")({
         "/industries/full-service"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/industries/full-service" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/industries/full-service" }],
     scripts: [
       breadcrumbLd([
         { name: "Home", url: "/" },

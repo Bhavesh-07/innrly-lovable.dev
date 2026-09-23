@@ -27,7 +27,7 @@ export const Route = createFileRoute("/solutions/document-vault")({
         content: "Every folio, W-9, and STR report — in one place, on time.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/solutions/document-vault" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/solutions/document-vault" }],
     scripts: [
       breadcrumbLd([
         { name: "Home", url: "/" },

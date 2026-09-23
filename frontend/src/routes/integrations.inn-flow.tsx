@@ -25,7 +25,7 @@ export const Route = createFileRoute("/integrations/inn-flow")({
         "/integrations/inn-flow"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/integrations/inn-flow" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/integrations/inn-flow" }],
     scripts: [
       {
         type: "application/ld+json",

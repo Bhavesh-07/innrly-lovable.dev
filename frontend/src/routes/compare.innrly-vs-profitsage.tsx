@@ -39,7 +39,7 @@ export const Route = createFileRoute("/compare/innrly-vs-profitsage")({
         "/compare/innrly-vs-profitsage"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/compare/innrly-vs-profitsage" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/compare/innrly-vs-profitsage" }],
     scripts: [
       {
         type: "application/ld+json",

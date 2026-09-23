@@ -195,7 +195,7 @@ Disallow: /control-hub
 Disallow: /control-hub/*
 Disallow: /api/admin/*
 
-Sitemap: https://www.innrly.com/sitemap.xml
+Sitemap: https://innrly.com/sitemap.xml
 `;
 
 interface SitemapItem {
@@ -1136,7 +1136,7 @@ function ControlHubSeoPage() {
             <div>
               <h2 className="text-lg font-bold text-slate-900">Editable robots.txt Directives</h2>
               <p className="text-xs text-slate-500">
-                Configure search crawler rules served dynamically at <code className="bg-slate-100 px-1 py-0.5 rounded text-indigo-600 font-mono">https://www.innrly.com/robots.txt</code>.
+                Configure search crawler rules served dynamically at <code className="bg-slate-100 px-1 py-0.5 rounded text-indigo-600 font-mono">https://innrly.com/robots.txt</code>.
               </p>
             </div>
 

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const base = (process.env.SITE_URL || "https://www.innrly.com").replace(/\/+$/, "");
+        const base = (process.env.SITE_URL || "https://innrly.com").replace(/\/+$/, "");
         const legalDate = "2026-06-06";
 
         // Default static entries

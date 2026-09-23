@@ -11,7 +11,7 @@ export const Route = createFileRoute("/404")({
     meta: [
       ...getMetaTags(loaderData?.seo || null, defaultSeoData["/404"], "/404"),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/404" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/404" }],
   }),
 });
 

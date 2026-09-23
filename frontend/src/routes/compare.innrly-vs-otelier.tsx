@@ -39,7 +39,7 @@ export const Route = createFileRoute("/compare/innrly-vs-otelier")({
         "/compare/innrly-vs-otelier"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/compare/innrly-vs-otelier" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/compare/innrly-vs-otelier" }],
     scripts: [
       {
         type: "application/ld+json",

@@ -30,7 +30,7 @@ export const Route = createFileRoute("/contact")({
         content: "Talk to an operator, not an SDR. 30-minute demo on your portfolio.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/contact" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/contact" }],
     scripts: [
       {
         type: "application/ld+json",

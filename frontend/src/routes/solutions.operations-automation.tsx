@@ -23,7 +23,7 @@ export const Route = createFileRoute("/solutions/operations-automation")({
         "/solutions/operations-automation"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/solutions/operations-automation" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/solutions/operations-automation" }],
     scripts: [
       {
         type: "application/ld+json",

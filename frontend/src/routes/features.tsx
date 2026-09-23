@@ -42,7 +42,7 @@ export const Route = createFileRoute("/features")({
         content: "Night audit to morning coffee — already done. Reconciliation, AP, payroll, BI.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/features" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/features" }],
     scripts: [
       {
         type: "application/ld+json",

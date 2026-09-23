@@ -31,7 +31,7 @@ export const Route = createFileRoute("/integrations/mews")({
         "/integrations/mews"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/integrations/mews" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/integrations/mews" }],
     scripts: [
       {
         type: "application/ld+json",

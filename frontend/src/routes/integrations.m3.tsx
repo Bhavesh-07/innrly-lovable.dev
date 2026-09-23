@@ -43,7 +43,7 @@ export const Route = createFileRoute("/integrations/m3")({
         content: "The M3 data you already have — finally working for you.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/integrations/m3" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/integrations/m3" }],
     scripts: [
       {
         type: "application/ld+json",

@@ -17,7 +17,7 @@ export const Route = createFileRoute("/integrations/sage-intacct")({
         "/integrations/sage-intacct"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/integrations/sage-intacct" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/integrations/sage-intacct" }],
     scripts: [
       {
         type: "application/ld+json",

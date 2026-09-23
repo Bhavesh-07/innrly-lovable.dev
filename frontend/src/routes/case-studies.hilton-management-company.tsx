@@ -21,7 +21,7 @@ export const Route = createFileRoute("/case-studies/hilton-management-company")(
         "/case-studies/hilton-management-company"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/case-studies/hilton-management-company" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/case-studies/hilton-management-company" }],
     scripts: [
       {
         type: "application/ld+json",

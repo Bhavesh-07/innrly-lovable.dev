@@ -47,7 +47,7 @@ export const Route = createFileRoute("/roi-calculator")({
         "/roi-calculator"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/roi-calculator" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/roi-calculator" }],
     scripts: [
       breadcrumbLd([
         { name: "Home", url: "/" },

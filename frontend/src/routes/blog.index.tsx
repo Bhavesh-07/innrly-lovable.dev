@@ -38,7 +38,7 @@ export const Route = createFileRoute("/blog/")({
         "/blog"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/blog" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/blog" }],
     scripts: [
       {
         type: "application/ld+json",

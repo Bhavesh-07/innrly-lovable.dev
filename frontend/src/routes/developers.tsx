@@ -13,7 +13,7 @@ export const Route = createFileRoute("/developers")({
     meta: [
       ...getMetaTags(loaderData?.seo || null, defaultSeoData["/developers"], "/developers"),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/developers" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/developers" }],
     scripts: [
       breadcrumbLd([
         { name: "Home", url: "/" },

@@ -35,7 +35,7 @@ export const Route = createFileRoute("/solutions/business-intelligence")({
         "/solutions/business-intelligence"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/solutions/business-intelligence" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/solutions/business-intelligence" }],
     scripts: [
       {
         type: "application/ld+json",

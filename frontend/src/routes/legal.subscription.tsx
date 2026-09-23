@@ -16,7 +16,7 @@ export const Route = createFileRoute("/legal/subscription")({
         "/legal/subscription"
       ),
     ],
-    links: [{ rel: "canonical", href: "https://www.innrly.com/legal/subscription" }],
+    links: [{ rel: "canonical", href: "https://innrly.com/legal/subscription" }],
     scripts: [
       {
         type: "application/ld+json",
