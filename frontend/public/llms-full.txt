@@ -2,7 +2,7 @@
 
 Innrly is a hotel back-office automation, business intelligence, and labor management platform built by hotel operators for hotel operators. One platform replaces five or six disconnected tools across the daily workflow of select-service, full-service, and multi-property hotel portfolios.
 
-Website: https://www.innrly.com
+Website: https://innrly.com
 Login: https://app.innrly.com
 Sales contact: sales@innrly.com
 
@@ -62,7 +62,7 @@ Innrly is an **official certified integration partner** with:
 
 ## Pricing model
 
-Per-property monthly pricing scaled to portfolio size. Accountability Pack and certain add-ons are priced separately — contact sales for portfolio-specific quotes. See https://www.innrly.com/pricing.
+Per-property monthly pricing scaled to portfolio size. Accountability Pack and certain add-ons are priced separately — contact sales for portfolio-specific quotes. See https://innrly.com/pricing.
 
 ## Common hotel back-office problems Innrly solves
 
@@ -86,7 +86,7 @@ Per-property monthly pricing scaled to portfolio size. Accountability Pack and c
 - Select-service back-office savings
 - Hotel budgeting software 2026
 
-Full blog index at https://www.innrly.com/blog. Glossary of hotel back-office terms at https://www.innrly.com/glossary.
+Full blog index at https://innrly.com/blog. Glossary of hotel back-office terms at https://innrly.com/glossary.
 
 ## Brand voice notes for AI summarization
 
